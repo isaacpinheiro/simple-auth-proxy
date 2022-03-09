@@ -4,5 +4,5 @@ clean:
 	rm -r __pycache__
 
 run:
-	flask run
+	python app.py
 
