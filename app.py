@@ -23,6 +23,10 @@ def get_params_string(params):
 
     return res
 
+def verify_access_token(headers):
+    # TODO
+    pass
+
 @app.route('/', defaults={'path': ''}, methods=['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'PATCH', 'OPTIONS'])
 @app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'PATCH', 'OPTIONS'])
 def index(path):
