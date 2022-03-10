@@ -16,4 +16,5 @@ config['app_ssl_verification'] = True # Always use True in production!
 config['idm_host'] = 'http://localhost'
 config['idm_port'] = 3001
 config['idm_ssl_verification'] = True # Always use True in production!
+config['idm_app_id'] = ''
 

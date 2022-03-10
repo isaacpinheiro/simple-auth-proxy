@@ -4,6 +4,7 @@
 from flask import Flask, request, jsonify
 import requests as req
 import json
+import re
 
 from config import config
 
@@ -24,12 +25,30 @@ def get_params_string(params):
     return res
 
 def verify_access_token(headers):
-    # TODO
-    pass
+
+    authorized = False
+
+    if headers.get('Authorization') == None:
+        return authorized
+    elif re.match('^Bearer .*$', headers.get('Authorization')) == None:
+        return authorized
+
+    token = headers.get('Authorization').split(' ')[1]
+    idm_url = config['idm_host'] + ':' + str(config['idm_port']) + '/user?access_token=' + token
+    res = req.get(idm_url)
+    obj = json.loads(res.text)
+
+    if obj.get('app_id') == config['idm_app_id']:
+        authorized = True
+
+    return authorized
 
 @app.route('/', defaults={'path': ''}, methods=['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'PATCH', 'OPTIONS'])
 @app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'PATCH', 'OPTIONS'])
 def index(path):
+
+    if verify_access_token(request.headers) == False:
+        return {'msg': 'Unauthorized'}
 
     url = config['app_host'] + ':' + str(config['app_port']) + '/' + path + get_params_string(request.args)
 
