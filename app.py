@@ -35,7 +35,7 @@ def verify_access_token(headers):
 
     token = headers.get('Authorization').split(' ')[1]
     idm_url = config['idm_host'] + ':' + str(config['idm_port']) + '/user?access_token=' + token
-    res = req.get(idm_url)
+    res = req.get(idm_url, verify=config['idm_ssl_verification'])
     obj = json.loads(res.text)
 
     if obj.get('app_id') == config['idm_app_id']:
