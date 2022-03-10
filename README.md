@@ -1,6 +1,10 @@
 # simple-auth-proxy
 
-**A simple authentication proxy to work in conjunction with FIWARE Identity Manager (KeyRock). It's work fine with most of json REST APIs, but requires some improvements to do complex tasks like upload and download files.**
+**Description**
+
+A simple authentication proxy to work in conjunction with FIWARE Identity Manager (KeyRock). It's work fine with most of json REST APIs, but requires some improvements to do complex tasks like upload and download files.
+
+**Instructions**
 
 The simple-auth-proxy needs `python3`, `pip`, `virtualenv` and `make` alredy installed to build and execute it.
 
