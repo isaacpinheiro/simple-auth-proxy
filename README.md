@@ -15,6 +15,7 @@ To build the simple-auth-proxy, do the following steps on Linux terminal:
   $ python3 -m venv venv
   $ source venv/bin/activate
   $ python3 -m pip install -r requirements.txt
+  $ cp config-template.py config.py
   ```
 
 To execute the simple-auth-proxy, write the following command on terminal:
