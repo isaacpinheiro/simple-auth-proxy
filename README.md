@@ -18,7 +18,7 @@ To build the simple-auth-proxy, do the following steps on Linux terminal:
   $ cp config-template.py config.py
   ```
 
-Informe the `config['idm_app_id']` on `config.py` file.
+Inform the `config['idm_app_id']` on `config.py` file.
 
 To execute the simple-auth-proxy, write the following command on terminal:
 
