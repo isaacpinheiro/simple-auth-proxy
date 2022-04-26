@@ -38,7 +38,7 @@ def verify_access_token(headers):
     res = req.get(idm_url, verify=config['idm_ssl_verification'])
     obj = json.loads(res.text)
 
-    if obj.get('app_id') ==  config['idm_app_id']:
+    if obj.get('app_id') == config['idm_app_id']:
         authorized = True
 
     return authorized
