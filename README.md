@@ -41,7 +41,7 @@ To run in production with HTTPS protocol, use Gunicorn as follows:
 If you are using the simple-auth-proxy to proxy the FIWARE Orion, you can test it with the following command:
 
   ```
-  $ curl -H “Authorization: Bearer <access_token>” -X GET http://localhost:5000/v2
+  $ curl -H "Authorization: Bearer <access_token>" -X GET http://localhost:5000/v2
   ```
 
 
